@@ -43,7 +43,7 @@
             commits_2025: 169,
             first_commit: '2025-01-07',
             last_commit: '2025-11-22',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Building AI-powered interactive textbooks that adapt to student learning patterns and provide personalized educational experiences.'
         },
         {
@@ -54,7 +54,7 @@
             commits_2025: 113,
             first_commit: '2025-02-27',
             last_commit: '2025-12-25',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Model Context Protocol server enabling Claude to interact with Canvas LMS - manage courses, assignments, and student data.'
         },
         {
@@ -65,7 +65,7 @@
             commits_2025: 27,
             first_commit: '2025-10-06',
             last_commit: '2025-10-09',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Self-hosted Open Brewery DB API for student use. Contains 8,925 breweries from around the world for teaching API concepts.'
         },
         {
@@ -76,7 +76,7 @@
             commits_2025: 19,
             first_commit: '2025-09-13',
             last_commit: '2025-12-25',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'A semantic search tool to help students discover relevant projects from the Nano Banana Hackathon project showcase.'
         },
 
@@ -89,7 +89,7 @@
             commits_2025: 242,
             first_commit: '2025-04-19',
             last_commit: '2025-12-19',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Stage-based, multi-agent entrepreneurship coaching app powered by CrewAI. Guides founders through ideation to launch.'
         },
         {
@@ -100,7 +100,7 @@
             commits_2025: 13,
             first_commit: '2025-12-04',
             last_commit: '2025-12-05',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Open-source interview bot for gathering perspectives on AI use in education. Users select their role and share experiences.'
         },
         {
@@ -111,7 +111,7 @@
             commits_2025: 16,
             first_commit: '2025-11-17',
             last_commit: '2025-12-01',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'AI-powered entrepreneurship coaching platform backend built with Node.js, Express, Supabase, and OpenAI.'
         },
         {
@@ -122,7 +122,7 @@
             commits_2025: 13,
             first_commit: '2025-07-03',
             last_commit: '2025-08-19',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Student-led research at Gies College of Business exploring how intelligent agent teams can transform business workflows.'
         },
 
@@ -135,7 +135,7 @@
             commits_2025: 66,
             first_commit: '2025-09-30',
             last_commit: '2025-10-06',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Interactive AI-powered tool for exploring presentations from the NBER Economics of Transformative AI workshop.'
         },
         {
@@ -146,7 +146,7 @@
             commits_2025: 65,
             first_commit: '2025-11-01',
             last_commit: '2025-11-12',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Applied AI for Impact (A²I) curriculum proposal - designing the future of AI education in business schools.'
         },
         {
@@ -157,7 +157,7 @@
             commits_2025: 28,
             first_commit: '2025-09-28',
             last_commit: '2025-11-28',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Assignment AI Tester - evaluating how AI models perform on educational assessment tasks.'
         },
         {
@@ -168,7 +168,7 @@
             commits_2025: 17,
             first_commit: '2025-11-23',
             last_commit: '2025-11-30',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Campus AI Curriculum Task Force research - analyzing AI integration across university programs.'
         },
         {
@@ -179,7 +179,7 @@
             commits_2025: 12,
             first_commit: '2025-09-17',
             last_commit: '2025-09-25',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Interactive materials for exploring the Anthropic Economic Index (AEI) v3 data on AI economic impacts.'
         },
         {
@@ -190,7 +190,7 @@
             commits_2025: 11,
             first_commit: '2025-12-10',
             last_commit: '2025-12-11',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Comprehensive research on AI from frontier labs: usage patterns, capabilities, trajectories, and implications.'
         },
 
@@ -203,7 +203,7 @@
             commits_2025: 279,
             first_commit: '2025-08-27',
             last_commit: '2025-10-21',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'TLDW turns long-form YouTube videos into a structured learning workspace. Paste a URL and get AI-generated summaries.'
         },
         {
@@ -214,7 +214,7 @@
             commits_2025: 230,
             first_commit: '2025-07-27',
             last_commit: '2025-12-11',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Campus-wide scavenger hunt platform for UIUC students. Interactive challenges, team competitions, and real-time leaderboards.'
         },
         {
@@ -225,7 +225,7 @@
             commits_2025: 94,
             first_commit: '2025-11-17',
             last_commit: '2025-12-07',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Complete replica of the Illinois MakerLab website built with static HTML, CSS, and JavaScript.'
         },
         {
@@ -236,7 +236,7 @@
             commits_2025: 86,
             first_commit: '2025-03-02',
             last_commit: '2025-03-29',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Educational email subscription service delivering personalized, AI-generated educational content to your inbox.'
         },
 
@@ -249,7 +249,7 @@
             commits_2025: 7,
             first_commit: '2025-04-13',
             last_commit: '2025-04-13',
-            has_claude_md: false,
+            ai_assisted: true,
             description: 'Generator for llms.txt files - making websites AI-readable with structured metadata for large language models.'
         },
         {
@@ -260,7 +260,7 @@
             commits_2025: 2,
             first_commit: '2025-12-05',
             last_commit: '2025-12-08',
-            has_claude_md: true,
+            ai_assisted: true,
             description: 'Desktop-first visualization of the Claude Soul document with three views: gravitational, geological, and network perspectives.'
         }
     ];

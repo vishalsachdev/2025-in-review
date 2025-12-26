@@ -58,7 +58,7 @@
         animateNumber('total-repos', repos.length);
 
         // AI-assisted percentage
-        const aiAssisted = repos.filter(r => r.has_claude_md).length;
+        const aiAssisted = repos.filter(r => r.ai_assisted).length;
         const percentage = Math.round((aiAssisted / repos.length) * 100);
         document.getElementById('ai-assisted').textContent = percentage + '%';
     }

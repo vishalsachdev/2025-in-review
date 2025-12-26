@@ -134,7 +134,7 @@
 
         // AI badge
         const aiBadge = document.getElementById('ai-badge');
-        if (repo.has_claude_md) {
+        if (repo.ai_assisted) {
             aiBadge.classList.remove('hidden');
         } else {
             aiBadge.classList.add('hidden');
