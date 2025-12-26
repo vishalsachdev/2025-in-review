@@ -44,7 +44,8 @@
             first_commit: '2025-01-07',
             last_commit: '2025-11-22',
             ai_assisted: true,
-            description: 'Building AI-powered interactive textbooks that adapt to student learning patterns and provide personalized educational experiences.'
+            description: 'Building AI-powered interactive textbooks that adapt to student learning patterns and provide personalized educational experiences.',
+            website_url: 'https://dmccreary.github.io/intelligent-textbooks/'
         },
         {
             name: 'Canvas MCP',
@@ -94,7 +95,8 @@
             last_commit: '2025-12-19',
             ai_assisted: true,
             description: 'Stage-based, multi-agent entrepreneurship coaching app powered by CrewAI. Guides founders through ideation to launch.',
-            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case'
+            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case',
+            website_url: 'https://venturebots.ncsa.ai/'
         },
         {
             name: 'Claude Interviewer',
