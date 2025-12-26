@@ -56,7 +56,8 @@
             last_commit: '2025-12-25',
             ai_assisted: true,
             description: 'Model Context Protocol server enabling Claude to interact with Canvas LMS - manage courses, assignments, and student data.',
-            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the'
+            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the',
+            website_url: 'https://chatwithgpt.substack.com/p/when-claude-code-becomes-your-codeveloper'
         },
         {
             name: 'BADM554 API',
@@ -78,7 +79,8 @@
             first_commit: '2025-09-13',
             last_commit: '2025-12-25',
             ai_assisted: true,
-            description: 'A semantic search tool to help students discover relevant projects from the Nano Banana Hackathon project showcase.'
+            description: 'A semantic search tool to help students discover relevant projects from the Nano Banana Hackathon project showcase.',
+            website_url: 'https://nanobanana.streamlit.app/'
         },
 
         // AI Agent Nebula
@@ -103,7 +105,8 @@
             first_commit: '2025-12-04',
             last_commit: '2025-12-05',
             ai_assisted: true,
-            description: 'Open-source interview bot for gathering perspectives on AI use in education. Users select their role and share experiences.'
+            description: 'Open-source interview bot for gathering perspectives on AI use in education. Users select their role and share experiences.',
+            website_url: 'https://claude-interviewer-clone.vercel.app'
         },
         {
             name: 'EntreBot',
@@ -126,7 +129,8 @@
             last_commit: '2025-08-19',
             ai_assisted: true,
             description: 'Student-led research at Gies College of Business exploring how intelligent agent teams can transform business workflows.',
-            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case'
+            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case',
+            website_url: 'https://agentlab.illinihunt.org/'
         },
 
         // Research Cluster
@@ -139,7 +143,8 @@
             first_commit: '2025-09-30',
             last_commit: '2025-10-06',
             ai_assisted: true,
-            description: 'Interactive AI-powered tool for exploring presentations from the NBER Economics of Transformative AI workshop.'
+            description: 'Interactive AI-powered tool for exploring presentations from the NBER Economics of Transformative AI workshop.',
+            website_url: 'https://nber2025.vercel.app/'
         },
         {
             name: 'A2I Curriculum',
@@ -150,7 +155,8 @@
             first_commit: '2025-11-01',
             last_commit: '2025-11-12',
             ai_assisted: true,
-            description: 'Applied AI for Impact (A²I) curriculum proposal - designing the future of AI education in business schools.'
+            description: 'Applied AI for Impact (A²I) curriculum proposal - designing the future of AI education in business schools.',
+            website_url: 'https://vishalsachdev.github.io/a2i-curriculum/'
         },
         {
             name: 'GDPVal',
@@ -172,7 +178,8 @@
             first_commit: '2025-11-23',
             last_commit: '2025-11-30',
             ai_assisted: true,
-            description: 'Campus AI Curriculum Task Force research - analyzing AI integration across university programs.'
+            description: 'Campus AI Curriculum Task Force research - analyzing AI integration across university programs.',
+            website_url: 'https://vishalsachdev.github.io/ai-taskforce/'
         },
         {
             name: 'Anthropic Economic Index',
@@ -194,7 +201,8 @@
             first_commit: '2025-12-10',
             last_commit: '2025-12-11',
             ai_assisted: true,
-            description: 'Comprehensive research on AI from frontier labs: usage patterns, capabilities, trajectories, and implications.'
+            description: 'Comprehensive research on AI from frontier labs: usage patterns, capabilities, trajectories, and implications.',
+            website_url: 'https://vishalsachdev.github.io/ai-impact/'
         },
 
         // Web App Supernova
@@ -207,7 +215,8 @@
             first_commit: '2025-08-27',
             last_commit: '2025-10-21',
             ai_assisted: true,
-            description: 'TLDW turns long-form YouTube videos into a structured learning workspace. Paste a URL and get AI-generated summaries.'
+            description: 'TLDW turns long-form YouTube videos into a structured learning workspace. Paste a URL and get AI-generated summaries.',
+            website_url: 'https://tldw.us'
         },
         {
             name: 'IlliniHunt',
@@ -218,7 +227,8 @@
             first_commit: '2025-07-27',
             last_commit: '2025-12-11',
             ai_assisted: true,
-            description: 'Campus-wide scavenger hunt platform for UIUC students. Interactive challenges, team competitions, and real-time leaderboards.'
+            description: 'Campus-wide scavenger hunt platform for UIUC students. Interactive challenges, team competitions, and real-time leaderboards.',
+            website_url: 'https://www.illinihunt.org/'
         },
         {
             name: 'MakerLab',
@@ -229,7 +239,8 @@
             first_commit: '2025-11-17',
             last_commit: '2025-12-07',
             ai_assisted: true,
-            description: 'Complete replica of the Illinois MakerLab website built with static HTML, CSS, and JavaScript.'
+            description: 'Complete replica of the Illinois MakerLab website built with static HTML, CSS, and JavaScript.',
+            website_url: 'https://vishalsachdev.github.io/makerlab/'
         },
         {
             name: 'LearnByEmail',
@@ -240,7 +251,8 @@
             first_commit: '2025-03-02',
             last_commit: '2025-03-29',
             ai_assisted: true,
-            description: 'Educational email subscription service delivering personalized, AI-generated educational content to your inbox.'
+            description: 'Educational email subscription service delivering personalized, AI-generated educational content to your inbox.',
+            website_url: 'https://learnbyemail.com/'
         },
 
         // Additional Education
@@ -298,7 +310,8 @@
             last_commit: '2025-11-24',
             ai_assisted: true,
             description: 'Course materials for database management, exploring AI-augmented teaching.',
-            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the'
+            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the',
+            website_url: 'https://vishalsachdev.github.io/database-management/'
         },
 
         // Additional Agents
@@ -311,7 +324,8 @@
             first_commit: '2025-10-12',
             last_commit: '2025-11-26',
             ai_assisted: true,
-            description: 'AI consulting platform for healthcare professionals - enabling clinicians to create AI solutions.'
+            description: 'AI consulting platform for healthcare professionals - enabling clinicians to create AI solutions.',
+            website_url: 'https://athens-ai-orcin.vercel.app'
         },
 
         // Additional Research
@@ -337,7 +351,8 @@
             first_commit: '2025-10-31',
             last_commit: '2025-11-04',
             ai_assisted: true,
-            description: 'Automated subdomain management system for illinihunt.org using Cloudflare Workers.'
+            description: 'Automated subdomain management system for illinihunt.org using Cloudflare Workers.',
+            website_url: 'https://vishalsachdev.github.io/practicum/'
         },
 
         // Developer Tools
@@ -350,7 +365,8 @@
             first_commit: '2025-04-26',
             last_commit: '2025-04-27',
             ai_assisted: true,
-            description: 'Interactive calculator exploring Waymo robotaxi investment scenarios.'
+            description: 'Interactive calculator exploring Waymo robotaxi investment scenarios.',
+            website_url: 'https://vishalsachdev.github.io/waymo-investment-calculator/'
         },
         {
             name: 'Experiment Sandbox',

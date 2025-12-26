@@ -140,6 +140,15 @@
             aiBadge.classList.add('hidden');
         }
 
+        // Website link (primary action)
+        const websiteLink = document.getElementById('website-link');
+        if (repo.website_url) {
+            websiteLink.href = repo.website_url;
+            websiteLink.classList.remove('hidden');
+        } else {
+            websiteLink.classList.add('hidden');
+        }
+
         // GitHub link
         const githubLink = document.getElementById('github-link');
         if (repo.github_url) {

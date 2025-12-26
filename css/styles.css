@@ -231,25 +231,42 @@ body {
     transition: background 0.2s ease;
 }
 
-#github-link:hover,
-#article-link:hover {
-    background: rgba(255, 255, 255, 0.2);
+.link-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
 }
 
-#github-link.hidden,
-#article-link.hidden {
-    display: none;
+.link-buttons a {
+    display: inline-block;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+
+#website-link {
+    background: linear-gradient(135deg, #4FC3F7, #66BB6A);
+}
+
+#github-link {
+    background: rgba(255, 255, 255, 0.1);
 }
 
 #article-link {
-    display: inline-block;
     background: linear-gradient(135deg, #FFA726, #EF5350);
-    color: #ffffff;
-    text-decoration: none;
-    padding: 10px 20px;
-    border-radius: 8px;
-    font-size: 0.9rem;
-    margin-left: 10px;
+}
+
+.link-buttons a:hover {
+    filter: brightness(1.2);
+    transform: translateY(-1px);
+}
+
+.link-buttons a.hidden {
+    display: none;
 }
 
 /* Tour Narration - Center Bottom */
