@@ -54,7 +54,13 @@ Polish and share the visualization before December 31, 2025 deadline.
 
 ## Session Log
 
-### 2025-12-26
+### 2025-12-26 (Session 2)
+- Completed: Added screenshot.png (1200x630) for README and social preview
+- Completed: Reduced Writing Galaxy glow intensity (4x → 2x) to prevent blinding halo
+- Completed: Diagnosed browser caching issue causing stale stats display
+- Next: Test mobile touch controls, share on social media
+
+### 2025-12-26 (Session 1)
 - Completed: Full visualization with 30 repos, Writing Galaxy, cross-galaxy bridges, consistent button styling
 - Completed: Troubleshot subagent API issues (only Opus 4.5 available in deployment)
 - Completed: Added reminder to global CLAUDE.md for Jan 1, 2026 to add sonnet/haiku deployments
