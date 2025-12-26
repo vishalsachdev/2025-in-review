@@ -231,12 +231,25 @@ body {
     transition: background 0.2s ease;
 }
 
-#github-link:hover {
+#github-link:hover,
+#article-link:hover {
     background: rgba(255, 255, 255, 0.2);
 }
 
-#github-link.hidden {
+#github-link.hidden,
+#article-link.hidden {
     display: none;
+}
+
+#article-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFA726, #EF5350);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    margin-left: 10px;
 }
 
 /* Tour Narration - Center Bottom */

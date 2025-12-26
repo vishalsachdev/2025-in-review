@@ -149,6 +149,15 @@
             githubLink.classList.add('hidden');
         }
 
+        // Article link
+        const articleLink = document.getElementById('article-link');
+        if (repo.article_url) {
+            articleLink.href = repo.article_url;
+            articleLink.classList.remove('hidden');
+        } else {
+            articleLink.classList.add('hidden');
+        }
+
         // Show panel
         document.getElementById('info-panel').classList.remove('hidden');
 

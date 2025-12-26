@@ -55,7 +55,8 @@
             first_commit: '2025-02-27',
             last_commit: '2025-12-25',
             ai_assisted: true,
-            description: 'Model Context Protocol server enabling Claude to interact with Canvas LMS - manage courses, assignments, and student data.'
+            description: 'Model Context Protocol server enabling Claude to interact with Canvas LMS - manage courses, assignments, and student data.',
+            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the'
         },
         {
             name: 'BADM554 API',
@@ -90,7 +91,8 @@
             first_commit: '2025-04-19',
             last_commit: '2025-12-19',
             ai_assisted: true,
-            description: 'Stage-based, multi-agent entrepreneurship coaching app powered by CrewAI. Guides founders through ideation to launch.'
+            description: 'Stage-based, multi-agent entrepreneurship coaching app powered by CrewAI. Guides founders through ideation to launch.',
+            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case'
         },
         {
             name: 'Claude Interviewer',
@@ -123,7 +125,8 @@
             first_commit: '2025-07-03',
             last_commit: '2025-08-19',
             ai_assisted: true,
-            description: 'Student-led research at Gies College of Business exploring how intelligent agent teams can transform business workflows.'
+            description: 'Student-led research at Gies College of Business exploring how intelligent agent teams can transform business workflows.',
+            article_url: 'https://chatwithgpt.substack.com/p/connecting-the-dots-with-grok-a-case'
         },
 
         // Research Cluster
@@ -240,7 +243,137 @@
             description: 'Educational email subscription service delivering personalized, AI-generated educational content to your inbox.'
         },
 
+        // Additional Education
+        {
+            name: 'Superpower API',
+            slug: 'superpower',
+            constellation: 'education',
+            github_url: 'https://github.com/vishalsachdev/superpower',
+            commits_2025: 13,
+            first_commit: '2025-10-11',
+            last_commit: '2025-10-11',
+            ai_assisted: true,
+            description: 'API for Data Analysts - teaching module for BADM 554 on working with external APIs.'
+        },
+        {
+            name: 'BADM350 Business Model Explorer',
+            slug: 'badm350-ai-learning-tools',
+            constellation: 'education',
+            github_url: 'https://github.com/vishalsachdev/badm350-ai-learning-tools',
+            commits_2025: 7,
+            first_commit: '2025-06-24',
+            last_commit: '2025-06-24',
+            ai_assisted: true,
+            description: 'AI-enhanced learning tool for exploring business models in BADM 350.'
+        },
+        {
+            name: 'Claude Code for Business',
+            slug: 'claude-code-for-business',
+            constellation: 'education',
+            github_url: 'https://github.com/vishalsachdev/claude-code-for-business',
+            commits_2025: 4,
+            first_commit: '2025-12-25',
+            last_commit: '2025-12-25',
+            ai_assisted: true,
+            description: 'Build functional business tools using AI — no coding experience required.'
+        },
+        {
+            name: 'API Demo',
+            slug: 'api-demo',
+            constellation: 'education',
+            github_url: 'https://github.com/vishalsachdev/api-demo',
+            commits_2025: 4,
+            first_commit: '2025-02-27',
+            last_commit: '2025-02-27',
+            ai_assisted: true,
+            description: 'Simple web application demonstrating API integration for teaching purposes.'
+        },
+        {
+            name: 'Database Management',
+            slug: 'database-management',
+            constellation: 'education',
+            github_url: 'https://github.com/vishalsachdev/database-management',
+            commits_2025: 3,
+            first_commit: '2025-11-22',
+            last_commit: '2025-11-24',
+            ai_assisted: true,
+            description: 'Course materials for database management, exploring AI-augmented teaching.',
+            article_url: 'https://chatwithgpt.substack.com/p/teaching-database-management-in-the'
+        },
+
+        // Additional Agents
+        {
+            name: 'Athen AI',
+            slug: 'athen-ai',
+            constellation: 'agents',
+            github_url: 'https://github.com/vishalsachdev/athen-ai',
+            commits_2025: 16,
+            first_commit: '2025-10-12',
+            last_commit: '2025-11-26',
+            ai_assisted: true,
+            description: 'AI consulting platform for healthcare professionals - enabling clinicians to create AI solutions.'
+        },
+
+        // Additional Research
+        {
+            name: 'ICIS 2025 Paper',
+            slug: 'icis2025',
+            constellation: 'research',
+            github_url: 'https://github.com/vishalsachdev/icis2025-context-engineering',
+            commits_2025: 8,
+            first_commit: '2025-12-15',
+            last_commit: '2025-12-15',
+            ai_assisted: true,
+            description: 'Teaching Tech Differently: Context Engineering for IS Education - ICIS 2025 research paper.'
+        },
+
+        // Additional Web Apps
+        {
+            name: 'Practicum',
+            slug: 'practicum',
+            constellation: 'webapps',
+            github_url: 'https://github.com/vishalsachdev/practicum',
+            commits_2025: 45,
+            first_commit: '2025-10-31',
+            last_commit: '2025-11-04',
+            ai_assisted: true,
+            description: 'Automated subdomain management system for illinihunt.org using Cloudflare Workers.'
+        },
+
         // Developer Tools
+        {
+            name: 'Waymo Calculator',
+            slug: 'waymo-investment-calculator',
+            constellation: 'tools',
+            github_url: 'https://github.com/vishalsachdev/waymo-investment-calculator',
+            commits_2025: 13,
+            first_commit: '2025-04-26',
+            last_commit: '2025-04-27',
+            ai_assisted: true,
+            description: 'Interactive calculator exploring Waymo robotaxi investment scenarios.'
+        },
+        {
+            name: 'Experiment Sandbox',
+            slug: 'helloworld',
+            constellation: 'tools',
+            github_url: 'https://github.com/vishalsachdev/helloworld',
+            commits_2025: 6,
+            first_commit: '2025-11-19',
+            last_commit: '2025-12-21',
+            ai_assisted: true,
+            description: 'Repository for isolated experiments - each experiment lives on its own branch.'
+        },
+        {
+            name: 'LinkedIn Analysis',
+            slug: 'linkedin',
+            constellation: 'tools',
+            github_url: 'https://github.com/vishalsachdev/linkedin',
+            commits_2025: 4,
+            first_commit: '2025-10-27',
+            last_commit: '2025-10-27',
+            ai_assisted: true,
+            description: 'Analysis and visualization of LinkedIn data export for networking insights.'
+        },
         {
             name: 'LLMs.txt',
             slug: 'llms-txt',
