@@ -49,6 +49,7 @@
      */
     function updateStats() {
         const repos = window.REPOS;
+        const articles = window.ARTICLES || [];
 
         // Total commits
         const totalCommits = repos.reduce((sum, r) => sum + r.commits_2025, 0);
@@ -61,6 +62,11 @@
         const aiAssisted = repos.filter(r => r.ai_assisted).length;
         const percentage = Math.round((aiAssisted / repos.length) * 100);
         document.getElementById('ai-assisted').textContent = percentage + '%';
+
+        // Total articles
+        if (articles.length > 0) {
+            animateNumber('total-articles', articles.length);
+        }
     }
 
     /**

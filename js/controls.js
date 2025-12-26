@@ -119,6 +119,27 @@
      */
     function selectStar(star) {
         selectedStar = star;
+
+        // Check if this is an article or repo
+        const isArticle = star.userData.isArticle;
+
+        if (isArticle) {
+            showArticlePanel(star);
+        } else {
+            showRepoPanel(star);
+        }
+
+        // Show panel
+        document.getElementById('info-panel').classList.remove('hidden');
+
+        // Animate camera to focus on the star
+        focusOnStar(star);
+    }
+
+    /**
+     * Show info panel for a repository
+     */
+    function showRepoPanel(star) {
         const repo = star.userData.repo;
 
         if (!repo) {
@@ -132,6 +153,10 @@
         document.getElementById('project-commits').textContent = repo.commits_2025;
         document.getElementById('project-dates').textContent = `${repo.first_commit} - ${repo.last_commit}`;
 
+        // Show repo stats, hide article stats
+        document.getElementById('repo-stats').classList.remove('hidden');
+        document.getElementById('article-stats').classList.add('hidden');
+
         // AI badge
         const aiBadge = document.getElementById('ai-badge');
         if (repo.ai_assisted) {
@@ -140,7 +165,10 @@
             aiBadge.classList.add('hidden');
         }
 
-        // Website link (primary action)
+        // Hide article badge
+        document.getElementById('article-badge').classList.add('hidden');
+
+        // Website link
         const websiteLink = document.getElementById('website-link');
         if (repo.website_url) {
             websiteLink.href = repo.website_url;
@@ -158,7 +186,7 @@
             githubLink.classList.add('hidden');
         }
 
-        // Article link
+        // Article link (related article for this repo)
         const articleLink = document.getElementById('article-link');
         if (repo.article_url) {
             articleLink.href = repo.article_url;
@@ -167,11 +195,65 @@
             articleLink.classList.add('hidden');
         }
 
-        // Show panel
-        document.getElementById('info-panel').classList.remove('hidden');
+        // Hide read link (for articles only)
+        document.getElementById('read-link').classList.add('hidden');
 
-        // Animate camera to focus on the star
-        focusOnStar(star);
+        // Hide related repos (for articles only)
+        document.getElementById('related-repos').classList.add('hidden');
+    }
+
+    /**
+     * Show info panel for an article
+     */
+    function showArticlePanel(star) {
+        const article = star.userData.article;
+
+        if (!article) {
+            console.warn('No article data on star');
+            return;
+        }
+
+        // Populate info panel
+        document.getElementById('project-name').textContent = article.title;
+        document.getElementById('project-description').textContent = article.description || 'No description available';
+        document.getElementById('article-date').textContent = article.publish_date;
+        document.getElementById('article-words').textContent = article.word_count.toLocaleString();
+
+        // Show article stats, hide repo stats
+        document.getElementById('repo-stats').classList.add('hidden');
+        document.getElementById('article-stats').classList.remove('hidden');
+
+        // Hide AI badge, show article badge
+        document.getElementById('ai-badge').classList.add('hidden');
+        document.getElementById('article-badge').classList.remove('hidden');
+
+        // Hide repo-specific links
+        document.getElementById('website-link').classList.add('hidden');
+        document.getElementById('github-link').classList.add('hidden');
+        document.getElementById('article-link').classList.add('hidden');
+
+        // Show read link
+        const readLink = document.getElementById('read-link');
+        readLink.href = article.substack_url;
+        readLink.classList.remove('hidden');
+
+        // Show related repos if any - as clickable GitHub links
+        const relatedReposDiv = document.getElementById('related-repos');
+        const relatedReposList = document.getElementById('related-repos-list');
+
+        if (article.linked_repos && article.linked_repos.length > 0) {
+            relatedReposList.innerHTML = article.linked_repos
+                .map(slug => {
+                    const repo = window.REPOS.find(r => r.slug === slug);
+                    if (!repo) return '';
+                    return `<a href="${repo.github_url}" target="_blank" rel="noopener" class="related-repo">${repo.name}</a>`;
+                })
+                .filter(Boolean)
+                .join(' ');
+            relatedReposDiv.classList.remove('hidden');
+        } else {
+            relatedReposDiv.classList.add('hidden');
+        }
     }
 
     /**

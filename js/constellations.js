@@ -6,9 +6,14 @@
     // Star geometry shared across all stars
     const starGeometry = new THREE.SphereGeometry(1, 16, 16);
 
+    // Diamond geometry for article stars (octahedron = 8-sided diamond shape)
+    const articleGeometry = new THREE.OctahedronGeometry(1, 0);
+
     // Store references to star meshes for interaction
     window.starMeshes = [];
+    window.articleMeshes = [];  // Separate array for articles
     window.constellationGroups = {};
+    window.bridgeLines = [];  // Cross-galaxy bridge lines
 
     /**
      * Create all constellations from repo data
@@ -76,6 +81,16 @@
         });
 
         console.log(`Created ${window.starMeshes.length} stars in ${Object.keys(grouped).length} constellations`);
+
+        // Create Writing Galaxy from articles (if available)
+        if (window.ARTICLES && window.ARTICLES.length > 0) {
+            createWritingGalaxy();
+        }
+
+        // Create cross-galaxy bridges (after all constellations exist)
+        if (window.ARTICLES && window.ARTICLES.length > 0) {
+            createBridgeLines();
+        }
     }
 
     /**
@@ -245,10 +260,201 @@
         return group.position.clone();
     }
 
+    /**
+     * Create the Writing Galaxy constellation for articles
+     */
+    function createWritingGalaxy() {
+        const config = window.CONSTELLATIONS.writing;
+        if (!config) {
+            console.warn('Writing constellation config not found');
+            return;
+        }
+
+        const group = new THREE.Group();
+        group.name = 'writing';
+
+        // Position Writing Galaxy above and centered (distinct from code constellations)
+        group.position.set(0, 35, 0);
+
+        // Group articles by theme for sub-clustering
+        const themeGroups = {};
+        window.ARTICLES.forEach(article => {
+            if (!themeGroups[article.theme]) {
+                themeGroups[article.theme] = [];
+            }
+            themeGroups[article.theme].push(article);
+        });
+
+        const themeNames = Object.keys(themeGroups);
+        const articleStarPositions = [];
+
+        // Position each theme cluster in a ring
+        themeNames.forEach((themeName, themeIndex) => {
+            const articles = themeGroups[themeName];
+            const themeConfig = window.ARTICLE_THEMES[themeName];
+
+            // Angle for this theme cluster
+            const themeAngle = (themeIndex / themeNames.length) * Math.PI * 2;
+            const themeRadius = 12;
+
+            // Create stars for articles in this theme
+            articles.forEach((article, articleIndex) => {
+                const star = createArticleStar(article, themeConfig, articleIndex, articles.length, themeAngle, themeRadius);
+                group.add(star);
+                articleStarPositions.push({ pos: star.position.clone(), theme: themeName });
+                window.starMeshes.push(star);
+                window.articleMeshes.push(star);
+            });
+
+            // Add theme sub-label
+            const subLabel = createConstellationLabel(themeConfig.displayName, themeConfig.color);
+            subLabel.position.set(
+                Math.cos(themeAngle) * themeRadius,
+                -5,
+                Math.sin(themeAngle) * themeRadius
+            );
+            subLabel.scale.set(12, 1.5, 1);  // Smaller than main labels
+            group.add(subLabel);
+        });
+
+        // Create constellation lines within each theme cluster
+        themeNames.forEach(themeName => {
+            const themeArticles = articleStarPositions.filter(a => a.theme === themeName);
+            if (themeArticles.length > 1) {
+                const themeConfig = window.ARTICLE_THEMES[themeName];
+                const lines = createConstellationLines(
+                    themeArticles.map(a => a.pos),
+                    themeConfig.color
+                );
+                group.add(lines);
+            }
+        });
+
+        // Add main constellation label
+        const label = createConstellationLabel(config.displayName, config.color);
+        label.position.set(0, 20, 0);
+        group.add(label);
+
+        window.constellationGroups.writing = group;
+        window.scene.add(group);
+
+        console.log(`Created Writing Galaxy with ${window.ARTICLES.length} articles in ${themeNames.length} themes`);
+    }
+
+    /**
+     * Create a single article star mesh (diamond shape)
+     */
+    function createArticleStar(article, themeConfig, index, total, themeAngle, themeRadius) {
+        // Normalize word count to star size (min 0.8, max 2.5)
+        const maxWords = Math.max(...window.ARTICLES.map(a => a.word_count));
+        const normalizedSize = 0.8 + (article.word_count / maxWords) * 1.7;
+
+        // Use theme color for the article
+        const color = themeConfig ? themeConfig.color : '#FFD700';
+
+        // Create material with glow effect
+        const material = new THREE.MeshBasicMaterial({
+            color: new THREE.Color(color),
+            transparent: true,
+            opacity: 0.95
+        });
+
+        // Use octahedron geometry (diamond shape) for articles
+        const star = new THREE.Mesh(articleGeometry, material);
+        star.scale.setScalar(normalizedSize);
+
+        // Position within theme cluster (fan pattern)
+        const localAngle = themeAngle + ((index - (total - 1) / 2) * 0.3);
+        const localRadius = themeRadius + (index % 2) * 3;
+        const height = (index / total) * 6 - 3;  // Spread vertically by publish date proxy
+
+        star.position.set(
+            Math.cos(localAngle) * localRadius,
+            height,
+            Math.sin(localAngle) * localRadius
+        );
+
+        // Store article data on the mesh for interactions
+        star.userData = {
+            article: article,  // Note: 'article' not 'repo' - different data type
+            isArticle: true,   // Flag to identify article vs repo
+            originalScale: normalizedSize,
+            originalColor: color
+        };
+
+        // Add glow sprite (slightly different for articles - warmer glow)
+        const glow = createGlowSprite(color, normalizedSize * 4);
+        star.add(glow);
+
+        return star;
+    }
+
+    /**
+     * Create bridge lines connecting articles to their linked repos
+     */
+    function createBridgeLines() {
+        const bridgeGroup = new THREE.Group();
+        bridgeGroup.name = 'bridges';
+
+        // Find articles with linked repos
+        window.ARTICLES.forEach(article => {
+            if (!article.linked_repos || article.linked_repos.length === 0) return;
+
+            // Find the article's star mesh
+            const articleStar = window.articleMeshes.find(
+                m => m.userData.article && m.userData.article.slug === article.slug
+            );
+            if (!articleStar) return;
+
+            // Get article star's world position
+            const articleWorldPos = new THREE.Vector3();
+            articleStar.getWorldPosition(articleWorldPos);
+
+            // Find each linked repo's star
+            article.linked_repos.forEach(repoSlug => {
+                const repoStar = window.starMeshes.find(
+                    m => m.userData.repo && m.userData.repo.slug === repoSlug
+                );
+                if (!repoStar) return;
+
+                // Get repo star's world position
+                const repoWorldPos = new THREE.Vector3();
+                repoStar.getWorldPosition(repoWorldPos);
+
+                // Create bridge line with gradient-like appearance
+                const bridgeMaterial = new THREE.LineDashedMaterial({
+                    color: 0xFFD700,  // Gold color for bridges
+                    transparent: true,
+                    opacity: 0.4,
+                    dashSize: 1,
+                    gapSize: 0.5
+                });
+
+                const points = [articleWorldPos, repoWorldPos];
+                const bridgeGeometry = new THREE.BufferGeometry().setFromPoints(points);
+                const bridge = new THREE.Line(bridgeGeometry, bridgeMaterial);
+                bridge.computeLineDistances();  // Required for dashed lines
+
+                bridge.userData = {
+                    fromArticle: article.slug,
+                    toRepo: repoSlug
+                };
+
+                bridgeGroup.add(bridge);
+                window.bridgeLines.push(bridge);
+            });
+        });
+
+        window.scene.add(bridgeGroup);
+        console.log(`Created ${window.bridgeLines.length} cross-galaxy bridges`);
+    }
+
     // Export functions
     window.createConstellations = createConstellations;
     window.highlightStar = highlightStar;
     window.resetStar = resetStar;
     window.getConstellationCenter = getConstellationCenter;
+    window.createWritingGalaxy = createWritingGalaxy;
+    window.createBridgeLines = createBridgeLines;
 
 })();

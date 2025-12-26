@@ -10,6 +10,12 @@
     // Tour steps - one for each constellation
     const tourSteps = [
         {
+            constellation: 'writing',
+            title: 'Writing Galaxy',
+            text: '20 Substack articles documenting the AI-human collaboration journey. Each diamond-shaped star is an article, grouped by theme and connected to the code that inspired it.',
+            duration: 7000
+        },
+        {
             constellation: 'education',
             title: 'Education Galaxy',
             text: 'Building AI-powered learning tools. From intelligent textbooks to Canvas integrations, these projects transformed how students learn.',

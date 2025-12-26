@@ -7,7 +7,7 @@
 
     <!-- Social sharing meta tags -->
     <meta property="og:title" content="What I Built in 2025 with AI">
-    <meta property="og:description" content="A visual journey through 19 projects and 1,600+ commits built with AI assistance">
+    <meta property="og:description" content="A visual journey through 30+ projects, 20 articles, and 1,600+ commits built with AI assistance">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -31,6 +31,10 @@
         <div class="stat">
             <span class="stat-value" id="ai-assisted">0%</span>
             <span class="stat-label">AI-assisted</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value" id="total-articles">0</span>
+            <span class="stat-label">articles</span>
         </div>
     </div>
 
@@ -56,6 +60,10 @@
             <span class="legend-color"></span>
             <span class="legend-name">Developer Tools</span>
         </div>
+        <div class="legend-item" data-constellation="writing">
+            <span class="legend-color" style="background: #FFD700;"></span>
+            <span class="legend-name">Writing Galaxy</span>
+        </div>
     </div>
 
     <!-- Info panel (right side, hidden by default) -->
@@ -63,7 +71,8 @@
         <button id="close-panel">&times;</button>
         <h2 id="project-name"></h2>
         <p id="project-description"></p>
-        <div class="project-stats">
+        <!-- Repo-specific stats -->
+        <div class="project-stats" id="repo-stats">
             <div class="project-stat">
                 <span class="project-stat-value" id="project-commits"></span>
                 <span class="project-stat-label">commits</span>
@@ -73,11 +82,29 @@
                 <span class="project-stat-label">active</span>
             </div>
         </div>
+        <!-- Article-specific stats -->
+        <div class="project-stats hidden" id="article-stats">
+            <div class="project-stat">
+                <span class="project-stat-value" id="article-date"></span>
+                <span class="project-stat-label">published</span>
+            </div>
+            <div class="project-stat">
+                <span class="project-stat-value" id="article-words"></span>
+                <span class="project-stat-label">words</span>
+            </div>
+        </div>
         <div id="ai-badge" class="hidden">Built with AI assistance</div>
+        <div id="article-badge" class="hidden">✦ Article</div>
         <div class="link-buttons">
             <a id="website-link" href="#" target="_blank" rel="noopener" class="hidden">Visit Site</a>
-            <a id="github-link" href="#" target="_blank" rel="noopener">GitHub</a>
+            <a id="github-link" href="#" target="_blank" rel="noopener" class="hidden">GitHub</a>
             <a id="article-link" href="#" target="_blank" rel="noopener" class="hidden">Article</a>
+            <a id="read-link" href="#" target="_blank" rel="noopener" class="hidden">Read on Substack</a>
+        </div>
+        <!-- Related projects for articles -->
+        <div id="related-repos" class="hidden">
+            <span class="related-label">Related Projects:</span>
+            <div id="related-repos-list"></div>
         </div>
     </div>
 
@@ -107,6 +134,7 @@
 
     <!-- App scripts -->
     <script src="js/data.js"></script>
+    <script src="js/articles.js"></script>
     <script src="js/scene.js"></script>
     <script src="js/constellations.js"></script>
     <script src="js/controls.js"></script>

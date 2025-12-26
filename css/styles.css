@@ -220,6 +220,70 @@ body {
     display: none;
 }
 
+#article-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA726);
+    color: #000011;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+#article-badge.hidden {
+    display: none;
+}
+
+#read-link {
+    background: linear-gradient(135deg, #FFD700, #FFA726) !important;
+    color: #000011 !important;
+    font-weight: 600;
+}
+
+#related-repos {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#related-repos.hidden {
+    display: none;
+}
+
+.related-label {
+    display: block;
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    margin-bottom: 8px;
+}
+
+.related-repo {
+    display: inline-block;
+    background: rgba(79, 195, 247, 0.2);
+    color: #4FC3F7;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 2px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.related-repo:hover {
+    background: rgba(79, 195, 247, 0.4);
+    transform: translateY(-1px);
+}
+
+/* Writing Galaxy legend - diamond marker */
+.legend-item[data-constellation="writing"] .legend-color {
+    background: #FFD700;
+    color: #FFD700;
+    transform: rotate(45deg);
+    border-radius: 2px;
+}
+
 #github-link {
     display: inline-block;
     background: rgba(255, 255, 255, 0.1);
@@ -268,8 +332,12 @@ body {
     transform: translateY(-1px);
 }
 
-.link-buttons a.hidden {
-    display: none;
+.link-buttons a.hidden,
+#github-link.hidden,
+#website-link.hidden,
+#article-link.hidden,
+#read-link.hidden {
+    display: none !important;
 }
 
 /* Tour Narration - Center Bottom */
