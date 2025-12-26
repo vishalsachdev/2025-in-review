@@ -382,8 +382,8 @@
             originalColor: color
         };
 
-        // Add glow sprite (slightly different for articles - warmer glow)
-        const glow = createGlowSprite(color, normalizedSize * 4);
+        // Add glow sprite (subtler for articles to avoid overwhelming brightness)
+        const glow = createGlowSprite(color, normalizedSize * 2);
         star.add(glow);
 
         return star;
