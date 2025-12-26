@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2025 Year in Review | What I Built with AI</title>
+
+    <!-- Social sharing meta tags -->
+    <meta property="og:title" content="What I Built in 2025 with AI">
+    <meta property="og:description" content="A visual journey through 19 projects and 1,600+ commits built with AI assistance">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Three.js canvas container -->
+    <div id="canvas-container"></div>
+
+    <!-- Stats overlay (top-left) -->
+    <div id="stats-overlay">
+        <h1>2025 Year in Review</h1>
+        <div class="stat">
+            <span class="stat-value" id="total-commits">0</span>
+            <span class="stat-label">commits</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value" id="total-repos">0</span>
+            <span class="stat-label">projects</span>
+        </div>
+        <div class="stat">
+            <span class="stat-value" id="ai-assisted">0%</span>
+            <span class="stat-label">AI-assisted</span>
+        </div>
+    </div>
+
+    <!-- Constellation legend (bottom-left) -->
+    <div id="constellation-legend">
+        <div class="legend-item" data-constellation="education">
+            <span class="legend-color"></span>
+            <span class="legend-name">Education Galaxy</span>
+        </div>
+        <div class="legend-item" data-constellation="agents">
+            <span class="legend-color"></span>
+            <span class="legend-name">AI Agent Nebula</span>
+        </div>
+        <div class="legend-item" data-constellation="research">
+            <span class="legend-color"></span>
+            <span class="legend-name">Research Cluster</span>
+        </div>
+        <div class="legend-item" data-constellation="webapps">
+            <span class="legend-color"></span>
+            <span class="legend-name">Web App Supernova</span>
+        </div>
+        <div class="legend-item" data-constellation="tools">
+            <span class="legend-color"></span>
+            <span class="legend-name">Developer Tools</span>
+        </div>
+    </div>
+
+    <!-- Info panel (right side, hidden by default) -->
+    <div id="info-panel" class="hidden">
+        <button id="close-panel">&times;</button>
+        <h2 id="project-name"></h2>
+        <p id="project-description"></p>
+        <div class="project-stats">
+            <div class="project-stat">
+                <span class="project-stat-value" id="project-commits"></span>
+                <span class="project-stat-label">commits</span>
+            </div>
+            <div class="project-stat">
+                <span class="project-stat-value" id="project-dates"></span>
+                <span class="project-stat-label">active</span>
+            </div>
+        </div>
+        <div id="ai-badge" class="hidden">Built with AI assistance</div>
+        <a id="github-link" href="#" target="_blank" rel="noopener">View on GitHub</a>
+    </div>
+
+    <!-- Tour narration box (center-bottom, for guided tour) -->
+    <div id="tour-narration" class="hidden">
+        <p id="tour-text"></p>
+        <div class="tour-controls">
+            <button id="skip-tour">Skip Tour</button>
+            <button id="next-tour">Next</button>
+        </div>
+    </div>
+
+    <!-- Loading screen -->
+    <div id="loading">
+        <div class="loading-spinner"></div>
+        <p>Loading constellations...</p>
+    </div>
+
+    <!-- Instructions hint -->
+    <div id="instructions">
+        Click and drag to explore | Click a star to learn more
+    </div>
+
+    <!-- Three.js and dependencies -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+
+    <!-- App scripts -->
+    <script src="js/data.js"></script>
+    <script src="js/scene.js"></script>
+    <script src="js/constellations.js"></script>
+    <script src="js/controls.js"></script>
+    <script src="js/tour.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
