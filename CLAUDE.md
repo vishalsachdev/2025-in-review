@@ -39,7 +39,7 @@ Polish and share the visualization before December 31, 2025 deadline.
 - [x] Consistent button styling
 
 ### Polish (In Progress)
-- [ ] Add screenshot.png for README/social preview
+- [x] Add screenshot.png for README/social preview
 - [ ] Test mobile touch controls
 - [ ] Optimize performance for lower-end devices
 
